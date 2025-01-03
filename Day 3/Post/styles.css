@@ -1,0 +1,21 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fc7139;
+}
+
+.card{
+    margin: 1rem;
+    padding: 1.5rem;
+    background-color: white;
+    width: 500px;
+    height: 400px;
+    border-radius: 20px;
+}
+

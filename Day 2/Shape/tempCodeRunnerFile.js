@@ -1,0 +1,1 @@
+square.prototype.constructor = square;

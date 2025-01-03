@@ -1,0 +1,138 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+   
+}
+
+.container{
+    background-color: #fe9067;
+    margin: 1rem;
+    padding: 1rem;
+    height: 100vh;
+}
+
+h1{
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    background-image: linear-gradient(rgb(217, 238, 216), rgb(208, 247, 191));
+    color: transparent;
+    background-clip: text;
+}
+
+/* Section Input Number */
+.ParagraphInput{
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-right: 2rem;
+    margin-left: 2rem;
+}
+.InputContainer{
+    display : flex;
+    justify-content: left;
+}
+.BookNumberInput{
+    width : 300px;
+}
+
+.btn{
+    width: 90px;
+    color: white;
+    background-color: #e96535;
+    font-weight: 700;
+    border: none;
+}
+.AddBtn{
+    width: 90px;
+    color: white;
+    background-color: #e96535;
+    font-weight: 700;
+    margin-left: 1rem;
+    border: none;
+    border-radius: 10px;
+}
+
+/* Input Form */
+.BooksForm{
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+input{
+    width: 500px;
+    height: 30px;
+}
+.containerTable input{
+    width: 120px;
+    height: 30px;
+}
+
+.inputLable{
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: white;
+}
+.inputContainer{
+    display : flex;
+    flex-direction: column;
+}
+
+.errormsg{
+    text-align: center;
+    margin: 1rem;
+    font-weight: 900;
+    letter-spacing: 4px;
+    background-image: linear-gradient(rgb(51, 236, 79), rgb(22, 247, 255));
+    color: transparent;
+    background-clip: text;
+    font-size: 1.2rem;
+    display: none;
+}
+
+.formbtn{
+    padding: 1rem 0.5rem;
+    width: 10rem;
+    margin: 2rem;
+}
+
+.containerForm{
+    display:none;
+}
+
+
+/* Table */
+
+.containerTable{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+}
+
+table{
+  
+    color: white;
+    border-spacing: 0px;
+    text-align: center;
+}
+
+thead{
+    background-color: rgb(62, 62, 62);
+}
+tr,td{
+    padding: 2rem;
+    font-size: 1.3rem;
+    border: 1px solid #ccc;
+   
+}
+
+.btn-table{
+    padding: 0.6rem;
+}
