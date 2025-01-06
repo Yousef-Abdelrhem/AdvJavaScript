@@ -1,7 +1,7 @@
 // function Rectangle(width, height) {
-
 //     this.width = width;
 //     this.height = height;
+//     Rectangle.counter++;
 // }
 
 // Rectangle.prototype.CalcArea = function()
@@ -17,15 +17,10 @@
 //     console.log("Perimeter:", this.perimeter());
 // }
 
-// b. Create Class Property that counts numbers of created objects and Class
-// method to retrieve it.
-// Rectangle.prototype.count = function(){
-//     var counter = 0;
-//     for(key in this){
-//         counter++;
-//     }
-//     return counter;
-// }
+// // b. Create Class Property that counts numbers of created objects and Class
+// // method to retrieve it.
+
+// Rectangle.counter = 0;
 
 // var obj = new  Rectangle(3, 4);
 
@@ -48,13 +43,13 @@ Shape.prototype.CalcArea = function () {
 Shape.prototype.perimeter = function () {
   return 2 * (this.height + this.width);
 };
-Shape.prototype.toString = function () {
-  console.log("Area:", this.CalcArea());
-  console.log("Perimeter:", this.perimeter());
-};
+// Shape.prototype.toString = function () {
+//   console.log("Area:", this.CalcArea());
+//   console.log("Perimeter:", this.perimeter());
+// };
 function extend(child, parent) {
   child.prototype = Object.create(parent.prototype);
-  child.prototype.constructor = child;
+  // child.prototype.constructor = child;
 }
 
 function Rectangle(width, height) {
@@ -75,15 +70,17 @@ function square(width) {
   square.counter++;
 }
 square.counter = 0;
-extend(square, Shape);
+extend(square, Rectangle);
 
 // square.prototype = Object.create(Rectangle.prototype);
 // square.prototype.constructor = square;
 
 var rec = new Rectangle(3, 4);
 var sq = new square(4);
-rec.toString();
-sq.toString();
+// rec.toString();
+// sq.toString();
+
+document.write(rec)
 
 console.log('SquareCounter :', square.counter);
 console.log('RectangleCounter :', square.counter);

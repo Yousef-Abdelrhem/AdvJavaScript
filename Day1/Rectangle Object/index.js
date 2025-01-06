@@ -14,15 +14,17 @@ function Rectangle(width, height) {
     this.width = width || 0;
     this.height = height || 0;
     
-    this.area = function() {
-        return this.width * this.height;
-    }
-    this.perimeter = function() {
-        return 2 * (1 + this.width);
-    }
-    this.displayInfo = function() {
-        console.log(this.width, this.height , this.area() , this.perimeter());
-    }
+}
+
+Rectangle.prototype.area = function() {
+    return this.width * this.height;
+}
+
+Rectangle.prototype.perimeter = function() {
+    return this.width * this.height;
+}
+Rectangle.prototype.displayInfo = function() {
+    return this.width * this.height;
 }
 
 var obj = new Rectangle(2, 4);

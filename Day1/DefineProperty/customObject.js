@@ -3,20 +3,24 @@ obj = {
   location: "SV",
   addr: "123 st.",
   getSetGen: function () {
-    (function () {
-      for (var key in this) {
-        if (typeof this[key] !== "function") {
-          Object.defineProperty(this, key, {
+    var self = this;
+
+    for (var key in this) {
+      (function () {
+        var val = self[key];
+
+        if (typeof self[key] !== "function") {
+          Object.defineProperty(self, key, {
             get: function () {
-              return this[key];
+              return val;
             },
             set: function (val) {
-              this[key] = val;
+              val = val;
             },
           });
         }
-      }
-    })();
+      })();
+    }
   },
 };
 

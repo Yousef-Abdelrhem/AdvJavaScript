@@ -3,7 +3,7 @@ var xhr = new XMLHttpRequest();
 xhr.open("GET", "file.json");
 xhr.send();
 
-xhr.onload = function () {
+xhr.onloadstart  = function () {
   document.querySelector(".Load").style.display = "block";
   // alert("loading...");
 };
@@ -15,13 +15,12 @@ xhr.onerror = function () {
 var Band = document.querySelector(".Band");
 var Artist = document.querySelector(".Artist");
 var result;
-xhr.addEventListener("load", function () {
-  if (xhr.status === 200) {
-    document.querySelector(".Load").style.display = "none";
-
+xhr.addEventListener("readystatechange", function () {
+  if (xhr.status === 200 && xhr.readyState  === 4) {
+    const loadElement = document.querySelector(".Load");
+    if (loadElement) loadElement.style.display = "none";
 
     result = JSON.parse(xhr.responseText);
-
     for (key in result) {
       Band.innerHTML += "<option value= '" + key + "'>" + key + "</option>";
     }
@@ -32,14 +31,13 @@ xhr.addEventListener("load", function () {
   }
 });
 
-Band.addEventListener('change',function(e) {
-  result[e.target.value].forEach(function(key){
+Band.addEventListener("change", function (e) {
+  result[e.target.value].forEach(function (key) {
     Artist.innerHTML +=
-    "<option value= '" + key.value + "'>" + key.name + "</option>";
-   });
- });
+      "<option value= '" + key.value + "'>" + key.name + "</option>";
+  });
+});
 
- Artist.addEventListener('change',function(e) {
-  
+Artist.addEventListener("change", function (e) {
   window.location.href = e.target.value;
- });
+});

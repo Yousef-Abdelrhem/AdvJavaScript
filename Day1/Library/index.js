@@ -70,15 +70,20 @@ document.querySelector(".formbtn").addEventListener("click", function () {
         new Book(BookName.value, Price.value, Author.value, AuthorEmail.value)
       );
 
-      AddtoTable(BookName.value, Price.value, Author.value, AuthorEmail.value);
 
       BookName.value = "";
       Price.value = "";
       Author.value = "";
       AuthorEmail.value = "";
     }
+
     /// here in the count
     if (counter === bookNumber) {
+      for(var i = 0; i < Books.length; i++) {
+
+        AddtoTable(Books[i].name, Books[i].price, Books[i].author.name, Books[i].author.email);
+
+      }
       document.querySelector(".containerTable").style.display = "flex";
       document.querySelector(".containerForm").style.display = "none";
     }
@@ -113,10 +118,6 @@ document.querySelector("tbody").addEventListener("click", function (e) {
     var author = cells[2].textContent.trim();
     var AuthorEmail = cells[3].textContent.trim();
 
-    console.log(currentName);
-    console.log(price);
-    console.log(author);
-    console.log(AuthorEmail);
 
     row.innerHTML = `<tr>
     <td><input type="text"  placeholder='Name' value="${currentName}"/></td>
@@ -127,11 +128,10 @@ document.querySelector("tbody").addEventListener("click", function (e) {
     <td><button class="btn btn-table cancel">Cancel</button></td>
     </tr>`;
   }
+
   if (e.target.classList.contains("save") || e.target.classList.contains("cancel")) {
     var row = e.target.parentElement.parentElement;
     var inputs = row.querySelectorAll("input");
-
-    console.log(inputs);
 
     var currentName = inputs[0].value;
     var price = inputs[1].value;
@@ -148,5 +148,4 @@ document.querySelector("tbody").addEventListener("click", function (e) {
   </tr>`;
   }
 
- 
 });

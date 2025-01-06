@@ -11,8 +11,11 @@ xhr.onerror = function () {
   alert("Network Error");
 };
 
-xhr.addEventListener("load", function () {
+xhr.addEventListener("readystatechange", function () {
   if (xhr.status === 200) {
+    setTimeout(function () {
+
+    },(3000));
     document.querySelector(".Load").style.display = "none";
 
     var result = JSON.parse(xhr.responseText);

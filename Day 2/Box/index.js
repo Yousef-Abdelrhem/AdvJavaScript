@@ -39,25 +39,16 @@ Box.prototype.deleteBook = function (name) {
   for (var i = 0; i < this.content.length; i++) {
     if (this.content[i].name !== name) arr.push(this.content[i]);
   }
-
   this.content = arr;
 };
 
-Box.prototype.toString = function()
-{
-  console.log(
-    "width: ",
-   this.width,
-    " height: ",
-    this.height,
-    "BooksNumber: ",
-    this.content.length
-  );
-}
+Box.prototype.toString = function () {
+  return "width: " + this.width + " height: " + this.height + "BooksNumber: " + this.content.length;
+};
 
-Box.prototype.valueOf = function(){
-    return this.content.length;
-}
+Box.prototype.valueOf = function () {
+  return this.content.length;
+};
 
 var box1 = new Box(10, 15, 20, 0, "wood", "storage");
 var box2 = new Box(10, 15, 20, 0, "wood", "storage");
@@ -76,5 +67,3 @@ box2.addBook(book3);
 box1.toString();
 
 console.log(box1 + box2);
-
-
